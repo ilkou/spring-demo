@@ -3,10 +3,10 @@ package ma.cires.solutions.demo.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.*;
 
 @Entity
 @Table(name = "customers")
@@ -18,5 +18,9 @@ public class Customer {
 
     @Id
     private String id;
+
+    @NotNull
+    @NotBlank
+    @Size(min = 3)
     private String name;
 }
